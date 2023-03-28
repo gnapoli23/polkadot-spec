@@ -380,3 +380,28 @@ encoded _Option_ value (<<defn-option-type>>) containing the UNIX timestamp
 encoded _Result_ value (<<defn-result-type>>). On success it contains an i32
 integer specifying the number of bytes written or a HTTP error type
 (<<defn-http-error>>) on failure.
+
+==== `ext_offchain_index_set`
+
+Write a key value pair to the Offchain DB database in a buffered fashion.
+
+===== Version 1 - Prototype
+----
+(func $ext_offchain_index_set (param $key i64) (param $value i64))
+----
+
+Arguments::
+* `key`: a pointer-size (<<defn-runtime-pointer-size>>) to the key.
+* `value`: a pointer-size (<<defn-runtime-pointer-size>>) to the value.
+
+==== `ext_offchain_index_clear`
+
+Remove a key and its associated value from the Offchain DB.
+
+===== Version 1 - Prototype
+----
+(func $ext_offchain_index_clear (param $key i64))
+----
+
+Arguments::
+* `key`: a pointer-size (<<defn-runtime-pointer-size>>) to the key.
